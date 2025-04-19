@@ -1,3 +1,16 @@
+#![doc = include_str!("../README.md")]
+#![no_std]
+
+/// Import all extension traits.
+///
+/// ```rust
+/// use permit::prelude::*;
+/// ```
+#[rustfmt::skip]
+pub mod prelude {
+    pub use crate::{Permit as _};
+}
+
 pub trait Permit<E> {
     fn permit<F>(self, f: F) -> Result<(), E>
     where
@@ -14,6 +27,8 @@ impl<E> Permit<E> for Result<(), E> {
     /// **Example:**
     /// ```rust
     /// // Attempt to create a directory, but permit the case where it already exists
+    /// use permit::Permit;
+    ///
     /// if let Err(e) =
     ///     std::fs::create_dir("/tmp/dir").permit(|e| e.kind() == std::io::ErrorKind::AlreadyExists)
     /// {
@@ -36,18 +51,20 @@ impl<E> Permit<E> for Result<(), E> {
 
     fn permit_if(self, condition: bool) -> Result<(), E> {
         match self {
-            Ok(()) => Ok(()),
-            Err(_) if condition => Ok(()),
-            Err(e) => Err(e),
+            Ok(()) => Ok(()),              // if result is ok, return Ok(())
+            Err(_) if condition => Ok(()), // permit the error and return Ok(())
+            Err(e) => Err(e),              // return the original error if not permitted
         }
     }
 }
 
 #[cfg(test)]
 mod tests {
+    extern crate std;
     use super::*;
     use anyhow::bail;
     use std::io::{ErrorKind, Write};
+    use std::string::ToString;
     use std::{fs, io};
 
     fn ls(path: &str) -> anyhow::Result<()> {
