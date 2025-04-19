@@ -8,6 +8,9 @@ repository = "https://github.com/Toxikuu/permit.git"
 license = "GPL-3.0"
 readme = "README.md"
 categories = [ "rust-patterns" ]
+keywords = [
+    "error"
+]
 
 [dev-dependencies]
 anyhow = "1.0.97"
