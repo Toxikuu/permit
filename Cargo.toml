@@ -1,10 +1,13 @@
 [package]
 name = "permit"
 version = "0.1.0"
+authors = [ "Toxikuu" ]
 edition = "2024"
-
-[dependencies]
-anyhow = "1.0.97"
+description = "Cute little library to permit a specific error"
+repository = "https://github.com/Toxikuu/permit.git"
+license = "GPL-3.0"
+readme = "README.md"
+categories = [ "rust-patterns" ]
 
 [dev-dependencies]
 anyhow = "1.0.97"
