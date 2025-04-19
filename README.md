@@ -1,6 +1,6 @@
 # Permit
 
-**Cute little rust library to permit a specific error.**
+**Cute little rust library to permit errors**
 
 Lets you permit a specific error or permit conditionally for `Result<(), E>`.
 Note that this does *not* work for `T`. This method may be chained.
