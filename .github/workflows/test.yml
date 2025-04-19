@@ -43,3 +43,6 @@ jobs:
 
       - name: Run nextest
         run: cargo nextest run
+
+      - name: Run doc tests
+        run: cargo test --doc
