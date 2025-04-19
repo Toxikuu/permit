@@ -85,7 +85,7 @@ mod tests {
     fn anyhow_succeed_after_permitting() {
         assert!(
             ls("/root")
-                .permit(|e| e.to_string().contains("permission"))
+                .permit(|e| e.to_string().contains("Permission"))
                 .is_ok()
         )
     }
