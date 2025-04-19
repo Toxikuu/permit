@@ -82,6 +82,11 @@ mod tests {
     }
 
     #[test]
+    fn anyhow_never_permit() {
+        assert!(ls("/etc/sudoers.d").permit_if(false).is_err())
+    }
+
+    #[test]
     fn anyhow_succeed_after_permitting() {
         assert!(
             ls("/root")
