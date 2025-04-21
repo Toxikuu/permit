@@ -28,4 +28,4 @@ std::fs::create_dir(&path).permit_if(path.exists()).unwrap_or_else(|e| {
 })
 ```
 
-***Hint:** Look at the tests in `src/main.rs` for more usage examples.*
+***Hint:** Look at the tests in `src/lib.rs` for more usage examples.*
