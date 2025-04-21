@@ -64,7 +64,10 @@ jobs:
             ${{ runner.os }}-cargo-registry-
 
       - name: Publish crate
-        run: cargo publish --locked
+        run: |
+          if cargo publish --locked 2>&1 | tee publish.log | grep -q 'already exists on crates.io index'; then
+            echo "Version {$REF_NAME} already published. Continuing."
+          fi
 
       # https://github.com/marketplace/actions/gh-release
       - name: Create github release
