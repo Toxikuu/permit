@@ -31,6 +31,15 @@ jobs:
           fi
           echo 'CHANGES.md is good! Good job!! <3'
 
+      - name: Check Cargo.toml
+        run: |
+          echo "Ensuring Cargo.toml mentioned ${REF_NAME}..."
+          if ! grep -q "version = ${REG_NAME}" Cargo.toml; then
+            echo "Cargo.toml does not mention version ${REF_NAME} :("
+            exit 1
+          fi
+          echo 'Cargo.toml is good! Good job!! <3'
+
       # TODO: Switch to something maintained ideally
       # Maybe https://github.com/marketplace/actions/setup-rust-toolchain-for-github-ci
       - name: Install rust
