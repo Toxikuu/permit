@@ -8,7 +8,7 @@ on:
     types:
       - completed
     branches:
-      - 'refs/tags/v*.*.*'
+      - 'v*.*.*'
 
 jobs:
   publish:
