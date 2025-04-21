@@ -11,7 +11,7 @@ categories = [ "rust-patterns" ]
 keywords = [
     "error"
 ]
-exclued = [
+exclude = [
     ".github/"
 ]
 
