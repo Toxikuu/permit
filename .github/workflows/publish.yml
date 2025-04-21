@@ -3,11 +3,8 @@ description: |
   Publish to crates.io and create a new release on github on new versioned tags.
 
 on:
-  workflow_run:
-    workflows: ["Test"]
-    types:
-      - completed
-    branches:
+  push:
+    tags:
       - 'v*.*.*'
 
 jobs:
