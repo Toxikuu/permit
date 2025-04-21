@@ -1,5 +1,5 @@
 [package]
-name = "permit"
+name = "permitit"
 version = "0.1.0"
 authors = [ "Toxikuu" ]
 edition = "2024"

@@ -4,7 +4,7 @@
 /// Import all extension traits.
 ///
 /// ```rust
-/// use permit::prelude::*;
+/// use permitit::prelude::*;
 /// ```
 #[rustfmt::skip]
 pub mod prelude {
@@ -27,7 +27,7 @@ impl<E> Permit<E> for Result<(), E> {
     /// **Example:**
     /// ```rust
     /// // Attempt to create a directory, but permit the case where it already exists
-    /// use permit::Permit;
+    /// use permitit::Permit;
     ///
     /// if let Err(e) =
     ///     std::fs::create_dir("/tmp/dir").permit(|e| e.kind() == std::io::ErrorKind::AlreadyExists)

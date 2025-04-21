@@ -1,4 +1,4 @@
-# Permit
+# Permit it!
 
 **Cute little rust library to permit errors**
 
@@ -7,7 +7,7 @@ Note that this does *not* work for `T`. This method may be chained.
 
 **Examples**
 ```rust
-use permit::Permit;
+use permitit::Permit;
 
 // Attempt to create a directory, but permit the case where it already exists.
 if let Err(e) = std::fs::create_dir("/tmp/dir")
@@ -19,7 +19,7 @@ if let Err(e) = std::fs::create_dir("/tmp/dir")
 ```
 
 ```rust
-use permit::Permit;
+use permitit::Permit;
 
 // Alternative way to permit the case where a directory already exists.
 let path = std::path::PathBuf::from("/tmp/dir");
