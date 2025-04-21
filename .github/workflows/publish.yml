@@ -1,4 +1,6 @@
 name: Publish
+description: |
+  Publish to crates.io and create a new release on github on new versioned tags.
 
 on:
   push:
