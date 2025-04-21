@@ -11,6 +11,9 @@ categories = [ "rust-patterns" ]
 keywords = [
     "error"
 ]
+exclued = [
+    ".github/"
+]
 
 [dev-dependencies]
 anyhow = "1.0.97"
