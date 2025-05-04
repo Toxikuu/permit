@@ -1,6 +1,6 @@
 [package]
 name = "permitit"
-version = "0.1.0"
+version = "0.1.1"
 authors = [ "Toxikuu" ]
 edition = "2024"
 description = "Cute little library to permit a specific error"
