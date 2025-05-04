@@ -68,6 +68,8 @@ jobs:
           if cargo publish --locked 2>&1 | tee publish.log | grep -q 'already exists on crates.io index'; then
             echo "Version ${REF_NAME} already published. Continuing."
           fi
+          echo "Publish log:"
+          cat publish.log
 
       # https://github.com/marketplace/actions/gh-release
       - name: Create github release
